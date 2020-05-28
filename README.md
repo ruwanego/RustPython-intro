@@ -1,5 +1,7 @@
 # RustPython: a Python implementation in Rust
 
+*This document is based on the talk [RustPython: a Python implementation in Rust Building a Python 3 interpreter in Rust](https://www.youtube.com/watch?v=nJDY9ASuiLc) by @windelbouwman and @shinglyu.*
+
 Rust is a relatively new programming language aimed as a safe competitor of C.
 There are already attempts to write extension modules in rust and load them into CPython. A whole new approach would be to re-implement the Python language in rust.
 
@@ -18,9 +20,9 @@ To implement standard library modules, we could just wrap existing rust crates. 
 ## Components
 
 * Rust Crates
-* Lexer, Parser, and AST(Abstract Syntax Tree)
+* Lexer, Parser, and Abstract Syntax Tree (AST)
 * Compiler
-* VM (Virtual Machine)
+* Virtual Machine (VM)
 * Import System
 * Built-in Objects
 
@@ -90,3 +92,6 @@ if __name__ == "__main__":
 ```
 
 * Idea: standardize this bytecode between Python implementations..?
+
+## Virtual Machine (VM)
+
