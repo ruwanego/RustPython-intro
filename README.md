@@ -46,6 +46,12 @@ Stripped-off Dependancy Tree would look like this:
         ├── rustpython-compiler (compiler)
         └── rustpython-parser (lexer, parser and AST)
 
+| Crates                                                   |                                                   |
+| -------------------------------------------------------- | ------------------------------------------------- |
+| [rustpython-parser](https://crates.io/crates/rustpython) | Lexer, Parser and AST                             |
+| [rustpython-vm](https://crates.io/crates/rustpython-vm)  | VM, compiler and built-in functions               |
+| [rustpython](https://crates.io/crates/rustpython)        | Using above crates to create an interactive shell |
+
 ## Lexing, Parsing and AST
 
 * A hand coded lexer to deal with indent and dedent of Python
