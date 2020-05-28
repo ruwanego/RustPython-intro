@@ -1,6 +1,6 @@
 # RustPython: a Python implementation in Rust
 
-*This document is based on the talk [RustPython: a Python implementation in Rust Building a Python 3 interpreter in Rust](https://www.youtube.com/watch?v=nJDY9ASuiLc) by @windelbouwman and @shinglyu.*
+*This document is based on the talk [RustPython: a Python implementation in Rust Building a Python 3 interpreter in Rust](https://www.youtube.com/watch?v=nJDY9ASuiLc) by [@windelbouwman](https://github.com/windelbouwman) and [@shinglyu](https://github.com/shinglyu).*
 
 Rust is a relatively new programming language aimed as a safe competitor of C.
 There are already attempts to write extension modules in rust and load them into CPython. A whole new approach would be to re-implement the Python language in rust.
