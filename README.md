@@ -54,7 +54,7 @@ Stripped-off Dependancy Tree would look like this:
 
 ## Compiler and Bytecode
 
-* The compiler turns python syntax (AST) into bytecode
+* The compiler turns Python syntax (AST) into bytecode
 * CPython bytecode is not stable and varies wildly between versions
 * Example bytecode
 
