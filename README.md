@@ -26,9 +26,13 @@ To implement standard library modules, we could just wrap existing rust crates. 
 
 ## Overall Design
 
+The CPython Design Strategy
+
+![CPython](/img/overall_design.png)
+
 The overall design of RustPython follows the CPython strategy.
 
-![GitHub Logo](/img/rustpython.png)
+![RustPython](/img/rustpython.png)
 
 Stripped-off Dependancy Tree would look like this:
 
