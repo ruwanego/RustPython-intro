@@ -57,12 +57,12 @@ Stripped-off Dependancy Tree would look like this:
 ## Lexing, Parsing and AST
 
 * A hand coded lexer to deal with indent and dedent of Python
-  * Task: Convert Python source into tokens
+  * The lexer converts Python source into tokens
 
 * The parser is generated with [lalrpop](https://github.com/lalrpop/lalrpop)
-  * Task: Convert tokens into an AST
+  * The parser converts tokens into an [AST (Abstract Syntax Tree)](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
 
-* The AST (abstract syntax tree) nodes are Rust structs and enums
+* The AST nodes are Rust structs and enums
 
 ## Compiler and Bytecode
 
