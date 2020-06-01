@@ -97,7 +97,10 @@ if __name__ == "__main__":
 
 ## Virtual Machine (VM)
 
-- A fetch and dispatch loop
+- A fetch and execute loop
+- Fetch a bytecode
+- lookup in a `match` statement
+- perform the operation
 
 ```rust
 
@@ -111,5 +114,40 @@ if __name__ == "__main__":
     ref name,
     ref symbol,
   } => self.import(vm, name, symbol),
+
+```
+
+## Object Model
+
+- Use Rust Rc and RefCell to do reference counting of Python objects
+- Optionally store rust payload (for instance String, or f64)
+
+```rust
+
+pub type PyRef<T> = Rc<RefCell<T>>;
+pub type PyObjectRef = PyRef<PyObject>;
+
+pub struct PyObject {
+  pub kind: PyObjectKind,
+  pub typ: Optic <PyObjectRef>,
+  pub diet: HashMap<String, PyObjectRef>,
+}
+
+pub enum PyObjectKind {
+  String {
+    value: String
+  },
+  Integer {
+    value: Biglnt,
+  },
+  Float {
+    value: f64,
+  }
+  Complex {
+    value: Complex64,
+  },
+  Bytes {
+    value: Vec<u8>,
+  },
 
 ```
