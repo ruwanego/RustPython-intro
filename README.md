@@ -119,7 +119,7 @@ if __name__ == "__main__":
 
 ## Object Model
 
-- Use Rust Rc([std::rc::Rc](https://doc.rust-lang.org/std/rc/struct.Rc.html)) and RefCell([std::cell::RefCell](https://doc.rust-lang.org/std/cell/struct.RefCell.html)) to do reference counting of Python objects
+- Use Rust `Rc`([std::rc::Rc](https://doc.rust-lang.org/std/rc/struct.Rc.html)) and `RefCell`([std::cell::RefCell](https://doc.rust-lang.org/std/cell/struct.RefCell.html)) to do reference counting of Python objects
 - Optionally store rust payload (for instance String, or f64)
 
 ```rust
