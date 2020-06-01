@@ -96,3 +96,20 @@ if __name__ == "__main__":
 - Idea: standardize this bytecode between Python implementations..?
 
 ## Virtual Machine (VM)
+
+- A fetch and dispatch loop
+
+```rust
+
+  match &instruction {
+    bytecode::Instruction::LoadConst { ref value } => {
+      let obj = self.unwrap.constant(vm, value);
+      self.push_value(obj);
+      Ok(None)
+  }
+  bytecode::Instruction::Import {
+    ref name,
+    ref symbol,
+  } => self.import(vm, name, symbol),
+
+```
