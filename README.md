@@ -1,6 +1,6 @@
 # RustPython: a Python implementation in Rust
 
-*This document is based on the talk [RustPython: a Python implementation in Rust Building a Python 3 interpreter in Rust](https://www.youtube.com/watch?v=nJDY9ASuiLc) by [@windelbouwman](https://github.com/windelbouwman) and [@shinglyu](https://github.com/shinglyu) at [FOSDEM](https://fosdem.org) and the Lightning Talk [RustPython: a Python implementation in Rust](http://lukas-prokop.at/talks/pygraz-rustpython) at [pyGraz](https://pygraz.org/).*
+_This document is based on the talk [RustPython: a Python implementation in Rust Building a Python 3 interpreter in Rust](https://www.youtube.com/watch?v=nJDY9ASuiLc) by [@windelbouwman](https://github.com/windelbouwman) and [@shinglyu](https://github.com/shinglyu) at [FOSDEM](https://fosdem.org) and the Lightning Talk [RustPython: a Python implementation in Rust](http://lukas-prokop.at/talks/pygraz-rustpython) by [@meisterluk](https://github.com/meisterluk) at [pyGraz](https://pygraz.org/)._
 
 Rust is a relatively new programming language aimed as a safe competitor of C.
 There are already attempts to write extension modules in rust and load them into CPython. A whole new approach would be to re-implement the Python language in rust.
@@ -11,20 +11,20 @@ To implement standard library modules, we could just wrap existing rust crates. 
 
 ## Why
 
-* Rust is safer than C
-  * In general Rust allows you to focus on the actual implementation of the library
-* Learn Rust
-* Learn Python intrnals
-* Create a Python implementation which is more memory-safe.
+- Rust is safer than C
+  - In general Rust allows you to focus on the actual implementation of the library
+- Learn Rust
+- Learn Python intrnals
+- Create a Python implementation which is more memory-safe.
 
 ## Components
 
-* Rust Crates
-* Lexer, Parser, and Abstract Syntax Tree (AST)
-* Compiler
-* Virtual Machine (VM)
-* Import System
-* Built-in Objects
+- Rust Crates
+- Lexer, Parser, and Abstract Syntax Tree (AST)
+- Compiler
+- Virtual Machine (VM)
+- Import System
+- Built-in Objects
 
 ## Overall Design
 
@@ -56,19 +56,21 @@ Stripped-off Dependancy Tree would look like this:
 
 ## Lexing, Parsing and AST
 
-* A hand coded lexer to deal with indent and dedent of Python
-  * The lexer converts Python source into tokens
+- A hand coded lexer to deal with indent and dedent of Python
 
-* The parser is generated with [lalrpop](https://github.com/lalrpop/lalrpop)
-  * The parser converts tokens into an [AST (Abstract Syntax Tree)](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+  - The lexer converts Python source into tokens
 
-* The AST nodes are Rust structs and enums
+- The parser is generated with [lalrpop](https://github.com/lalrpop/lalrpop)
+
+  - The parser converts tokens into an [AST (Abstract Syntax Tree)](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+
+- The AST nodes are Rust structs and enums
 
 ## Compiler and Bytecode
 
-* The compiler turns Python syntax (AST) into bytecode
-* CPython bytecode is not stable and varies wildly between versions
-* Example bytecode
+- The compiler turns Python syntax (AST) into bytecode
+- CPython bytecode is not stable and varies wildly between versions
+- Example bytecode
 
 ```python
 import dis
@@ -91,7 +93,6 @@ if __name__ == "__main__":
 
 ```
 
-* Idea: standardize this bytecode between Python implementations..?
+- Idea: standardize this bytecode between Python implementations..?
 
 ## Virtual Machine (VM)
-
