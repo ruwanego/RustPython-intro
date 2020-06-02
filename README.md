@@ -134,7 +134,7 @@ pub type PyObjectRef = PyRef<PyObject>;
 pub struct PyObject {
   pub kind: PyObjectKind,
   pub typ: Optic <PyObjectRef>,
-  pub diet: HashMap<String, PyObjectRef>,
+  pub dict: HashMap<String, PyObjectRef>,
 }
 
 pub enum PyObjectKind {
