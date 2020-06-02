@@ -57,13 +57,9 @@ Stripped-off Dependancy Tree would look like this:
 ## Lexing, Parsing and AST
 
 - A hand coded lexer to deal with indent and dedent of Python
-
   - The lexer converts Python source into tokens
-
 - The parser is generated with [lalrpop](https://github.com/lalrpop/lalrpop)
-
   - The parser converts tokens into an [AST (Abstract Syntax Tree)](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
-
 - The AST nodes are Rust structs and enums
 
 ## Compiler and Bytecode
@@ -156,5 +152,27 @@ pub enum PyObjectKind {
   Bytes {
     value: Vec<u8>,
   },
+
+```
+
+## Builtin functions
+
+- Builtin Python functions are implemented in Rust
+
+```rust
+
+fn buitin_all(vm: &mut VirtualMachine, args: PyFuncArgs) -> PyResult {
+  arg_check!(vm, args, required = ((iterable, None)]);
+  let items = vm.extract_elements(iterable)?;
+
+  for item in items {
+    let result = objbool::boolval(vm, item)?;
+    if I result {
+      return Ok(vm.new_bool(false));
+    }
+  }
+
+  Ok(vm.new_bool(true))
+}
 
 ```
