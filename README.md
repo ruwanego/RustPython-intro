@@ -121,7 +121,7 @@ if __name__ == "__main__":
 ## Object Model
 
 - In CPython, there is reference counting
-- The type `PyObjectRef` ([rustpython_vm::pyobject::PyObjectRef](https://docs.rs/rustpython-vm/0.1.1/rustpython_vm/pyobject/type.PyObjectRef.html)) which is a reference count to the actual Python object
+- The type `PyObjectRef` ([rustpython_vm::pyobject::PyObjectRef](https://docs.rs/rustpython-vm/0.1.1/rustpython_vm/pyobject/type.PyObjectRef.html)) is a reference count to the actual Python object
 - Use Rust `Rc`([std::rc::Rc](https://doc.rust-lang.org/std/rc/struct.Rc.html)) and `RefCell`([std::cell::RefCell](https://doc.rust-lang.org/std/cell/struct.RefCell.html)) to do reference counting of Python objects
 - The struct `PyObject` ([rustpython_vm::pyobject::PyObject](https://docs.rs/rustpython-vm/0.1.1/rustpython_vm/pyobject/struct.PyObject.html)) has a `type` which is a `PyObjectRef` ([rustpython_vm::pyobject::PyObjectRef](https://docs.rs/rustpython-vm/0.1.1/rustpython_vm/pyobject/type.PyObjectRef.html))
 - Optionally store rust payload (for instance `String`, or `f64`)
