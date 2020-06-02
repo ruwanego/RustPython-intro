@@ -117,11 +117,11 @@ if __name__ == "__main__":
 ## Object Model
 
 - In CPython, there is reference counting
-- The type `PyObjectRef` ([rustpython_vm::pyobject::PyObjectRef](https://docs.rs/rustpython-vm/0.1.1/rustpython_vm/pyobject/type.PyObjectRef.html)) is a reference count to the actual Python object
-- Use Rust `Rc`([std::rc::Rc](https://doc.rust-lang.org/std/rc/struct.Rc.html)) and `RefCell`([std::cell::RefCell](https://doc.rust-lang.org/std/cell/struct.RefCell.html)) to do reference counting of Python objects
-- The struct `PyObject` ([rustpython_vm::pyobject::PyObject](https://docs.rs/rustpython-vm/0.1.1/rustpython_vm/pyobject/struct.PyObject.html)) has a `type` which is a `PyObjectRef` ([rustpython_vm::pyobject::PyObjectRef](https://docs.rs/rustpython-vm/0.1.1/rustpython_vm/pyobject/type.PyObjectRef.html)). And, each object has a dictionary in the form of a `HashMap`([std::collections::HashMap](https://doc.rust-lang.org/std/collections/struct.HashMap.html)), which is very dynamic and fast. So, you can easily set and get attributes at will.
+- The type `PyObjectRef` ([`rustpython_vm::pyobject::PyObjectRef`](https://docs.rs/rustpython-vm/0.1.1/rustpython_vm/pyobject/type.PyObjectRef.html)) is a reference count to the actual Python object
+- Use Rust `Rc`([`std::rc::Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)) and `RefCell`([`std::cell::RefCell`](https://doc.rust-lang.org/std/cell/struct.RefCell.html)) to do reference counting of Python objects
+- The struct `PyObject` ([`rustpython_vm::pyobject::PyObject`](https://docs.rs/rustpython-vm/0.1.1/rustpython_vm/pyobject/struct.PyObject.html)) has a `type` which is a `PyObjectRef` ([`rustpython_vm::pyobject::PyObjectRef`](https://docs.rs/rustpython-vm/0.1.1/rustpython_vm/pyobject/type.PyObjectRef.html)). And, each object has a dictionary in the form of a `HashMap`([`std::collections::HashMap`](https://doc.rust-lang.org/std/collections/struct.HashMap.html)), which is very dynamic and fast. So, you can easily set and get attributes at will.
 - For certain Python types, we need to internally store a Rust payload; for instance
-  - Python `String`([str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)) is backed by a Rust [std::string::String](https://doc.rust-lang.org/std/string/struct.String.html)
+  - Python `String`([`str`](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)) is backed by a Rust [`String`](https://doc.rust-lang.org/std/string/struct.String.html)
   - Python `Float` is backed by a Rust [`f64`](https://doc.rust-lang.org/std/primitive.f64.html)
   - Python `Integer` is backed by Rust [`BigInt`](https://crates.io/crates/num-bigint) - arbitary integer precision!
 
