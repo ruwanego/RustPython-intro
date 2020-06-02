@@ -178,4 +178,4 @@ fn buitin_all(vm: &mut VirtualMachine, args: PyFuncArgs) -> PyResult {
 ```
 
 - `PyFuncArgs`([rustpython_vm::function::PyFuncArgs](https://rustpython.github.io/website/rustpython_vm/function/struct.PyFuncArgs.html)) - Contains all the positional arguments and keyword arguments.
-- `arg_check` - Macro that checks the types of the arguments passed into the function.
+- `arg_check`([ rustpython_vm::arg_check](https://rustpython.github.io/website/rustpython_vm/macro.arg_check.html)) - Macro that checks the types of the arguments passed into the function.
