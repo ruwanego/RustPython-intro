@@ -176,3 +176,6 @@ fn buitin_all(vm: &mut VirtualMachine, args: PyFuncArgs) -> PyResult {
 }
 
 ```
+
+`PyFuncArgs` - Contains all the positional arguments and keyword arguments.
+`arg_check` - Macro that checks the types of the arguments passed into the function.
